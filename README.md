@@ -19,21 +19,22 @@ DSDNet
 ```
 For quick test , run the scipts:
 
-```bash
+```python
 # TMM22 dataset
-python test.py -opt /data/zfp/code/DSDNet/options/test/test_tmm22.yml
+python test.py -opt ./options/test/test_tmm22.yml
 
 # Nips23 dataset
-python test.py -opt /data/zfp/code/DSDNet/options/test/test_nips23.yml
+python test.py -opt ./options/test/test_nips23.yml
 
 ```
 
-
-##Quck Start
-Download the dataset and the pre-trained models, place them as follows:
-
 ## Training
 
+# TMM22 dataset
+python test.py -opt ./options/train/train_tmm22.yml
+
+# Nips23 dataset
+python test.py -opt ./options/train/train_nips23.yml
 
 ## Citation
 
