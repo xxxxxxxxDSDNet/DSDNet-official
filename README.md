@@ -32,10 +32,10 @@ python test.py -opt ./options/test/test_nips23.yml
 
 ```python
 # TMM22 dataset
-python test.py -opt ./options/train/train_tmm22.yml
+python train.py -opt ./options/train/train_tmm22.yml
 
 # Nips23 dataset
-python test.py -opt ./options/train/train_nips23.yml
+python train.py -opt ./options/train/train_nips23.yml
 ```
 ## Citation
 
