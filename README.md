@@ -7,7 +7,7 @@ We propose a single-stage raw domain demoiréing framework, Dual-Stream Demoiré
 ![DSDNet](pic/arch.png)
 
 ## Dataset and Results
-Please download the TMM22 and NIPS23 datasets from [TMM22](https://github.com/tju-chengyijia/RDNet) and [NIPs23](https://github.com/tju-chengyijia/VD_raw).
+Please download the TMM22 and NIPS23 datasets from [TMM22](https://github.com/tju-chengyijia/RDNet) and [NIPS23](https://github.com/tju-chengyijia/VD_raw).
 
 Please download the results from [GoogleDrive](https://drive.google.com/drive/folders/13gqnegw4XGc4Q2unpaqSlvdiV2AQOYmt?usp=sharing) or [BaiduNetdisk:pq4s](https://pan.baidu.com/s/1sEb1oq77lXSyL33kkF5g0Q).
 
