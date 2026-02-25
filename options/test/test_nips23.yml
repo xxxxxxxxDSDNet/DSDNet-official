@@ -1,0 +1,41 @@
+name: Test_DSDNet_tnips23
+model_type: ImageDemoire
+num_gpu: 1 
+manual_seed: 0
+
+datasets:
+  test:
+    name: MultiFrameVD
+    type: NIPS23ImageYCbCrDataset
+    dataroot_gt_rgb: /data/rjy/dataset/liujicheng/video_dataset/merge/test/gt_rgb
+    dataroot_gt_raw: /data/rjy/dataset/liujicheng/video_dataset/merge/test/gt_raw
+    dataroot_lq_rgb: /data/rjy/dataset/liujicheng/video_dataset/merge/test/moire_rgb
+    dataroot_lq_raw: /data/rjy/dataset/liujicheng/video_dataset/merge/test/moire_raw
+    io_backend:
+      type: disk
+    batch_size: 1
+    num_worker: 8
+
+network_g:
+  type: DSDNet
+  n_feat: 48
+  scale_unetfeats: 24
+  Depth: [1, 1, 1]
+
+
+path:
+  pretrain_network_g:  /data/zfp/code/DSDNet/weights/nips23.pth
+  strict_load_g: True
+  param_key_g: 'params_ema'
+
+
+val:
+  save_img: True
+  metrics:
+    psnr:
+      type: calculate_vd_psnr
+    ssim:
+      type: calculate_vd_ssim
+    lpips:
+      type: alex
+

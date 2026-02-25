@@ -1,0 +1,41 @@
+name: Test_DSDNet_tmm22
+model_type: ImageDemoire
+num_gpu: 1 
+manual_seed: 0
+
+datasets:
+  test:
+    name: MultiFrameVD
+    type: TMM22ImageYCbCrDataset
+    dataroot_gt_rgb: /data/rjy/dataset/moireing/TMM22/raw_moire_image_dataset/testset/gt_RGB
+    dataroot_gt_raw: /data/rjy/dataset/moireing/TMM22/raw_moire_image_dataset/testset/gt_RAW_npz
+    dataroot_lq_rgb: /data/rjy/dataset/moireing/TMM22/raw_moire_image_dataset/testset/moire_RGB
+    dataroot_lq_raw: /data/rjy/dataset/moireing/TMM22/raw_moire_image_dataset/testset/moire_RAW_npz
+    io_backend:
+      type: disk
+    batch_size: 1
+    num_worker: 8
+
+
+network_g:
+  type: DSDNet
+  n_feat: 48
+  scale_unetfeats: 24
+  Depth: [1, 1, 1]
+
+path: 
+  pretrain_network_g: /data/zfp/code/DSDNet/weights/tmm22.pth
+  strict_load_g: True
+  param_key_g: 'params_ema'
+
+
+val:
+  save_img: True
+
+  metrics:
+    psnr:
+      type: calculate_vd_psnr
+    ssim:
+      type: calculate_vd_ssim
+    lpips: 
+      type: alex
